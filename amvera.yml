@@ -1,0 +1,21 @@
+meta:
+  environment: node
+  toolchain:
+    name: npm
+    version: "18"
+
+build:
+  skip: false
+  additionalCommands:
+    - git clone https://github.com/jeshi213/Anita-V4.git .
+    - npm install
+  artifacts:
+    "*": /
+
+run:
+  scriptName: index.js
+  scriptArguments: null
+  nodeArguments: null
+  command: npm run start
+  persistenceMount: /data
+  containerPort: "80"
